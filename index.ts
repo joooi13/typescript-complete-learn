@@ -221,7 +221,7 @@ unknownInput = true;
 
 //anyの場合
 anyInput = 'aaa';
-anyInput = 21;
+anyInput = 13;
 anyInput = true;
 text = anyInput;  //エラーにならない！
 
