@@ -31,3 +31,9 @@ $ tsc
 $ open index.html
 
 ```
+
+## outDir
+
+```
+"./dist"を指定しているので"./dist"配下にコンパイル結果が出力される
+```
