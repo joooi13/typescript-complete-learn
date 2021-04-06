@@ -2,26 +2,26 @@
 /**
  * 型注釈
  */
-let hasvalue = true;
-let float = 10.1;
-let singie = 'helllo';
+var hasvalue = true;
+var float = 10.1;
+var singie = 'helllo';
 /**
  * 型推論
  */
-let count = 10;
+var count = 10;
 //初期化だけするときなどに型注釈する
-let hello;
+var hello;
 hello = 2;
 /**
  * オブジェクトに型注釈をつける
  */
-const person = {
+var person = {
     name: 'jack',
     age: 21
 };
 console.log(person.age);
 //ネストもできる
-const personName = {
+var personName = {
     name: {
         first: 'jack',
         last: 'Smith'
@@ -31,11 +31,11 @@ const personName = {
 /**
  * 配列
  */
-const fruits = ['apple', 'Banana'];
+var fruits = ['apple', 'Banana'];
 /**
  * Tuple型(配列に制限がかかったもの)
  */
-const book = ['buisiness', 1500, false];
+var book = ['buisiness', 1500, false];
 //pushはできちゃう
 book.push(21);
 //呼び出しはできない
@@ -53,7 +53,7 @@ var CoffeeSizeInitialize;
     CoffeeSizeInitialize[CoffeeSizeInitialize["SHORT"] = 0] = "SHORT";
     CoffeeSizeInitialize[CoffeeSizeInitialize["TALL"] = 1] = "TALL";
 })(CoffeeSizeInitialize || (CoffeeSizeInitialize = {}));
-const coffee = {
+var coffee = {
     hot: true,
     size: CoffeeSize.SHORT,
     sizeNum: CoffeeSizeInitialize.SHORT
@@ -65,42 +65,42 @@ console.log(CoffeeSizeInitialize.SHORT); //0になる
 /**
  * any型
  */
-let anithing = true;
+var anithing = true;
 anithing = 'hello';
 anithing = 12;
 anithing = ['111', '222'];
 //anyが入れられちゃう
-let banana = 'banana';
+var banana = 'banana';
 banana = anithing;
 /**
  * Union型
  */
-let unionType = 10;
+var unionType = 10;
 //unionType.toUpperCase();  //ここではできない
 unionType = 'hello';
 unionType.toUpperCase(); //string入れてからだとできる
 //配列もOK
-let unionTypes = [10, 'aaa'];
+var unionTypes = [10, 'aaa'];
 /**
  * Literal型
  * constをつかうことによってLiteral型になる
  */
 //appleしかむり
-const apple = 'apple';
+var apple = 'apple';
 //const apple: 'apple' = 'hello';  //これはNG
-const orange = 'orange';
+var orange = 'orange';
 //enumっぽい使い方ができる
-let clothSize = 'large';
-const cloth = {
+var clothSize = 'large';
+var cloth = {
     size: clothSize //largeになる
 };
 cloth.size = 'large';
 //cloth.size = 'small';  //これはNG
 //別の書き方(型注釈しちゃう)
-const cloth2 = {
+var cloth2 = {
     size: 'small'
 };
-const cloth3 = {
+var cloth3 = {
     size: 'small'
 };
 console.log(cloth3.size);
@@ -125,9 +125,9 @@ function sayHello() {
 }
 console.log(sayHello()); //undefinedを返す
 //undefined型というものがある。定義okだがめったに使わない
-let tmp;
+var tmp;
 //null型もある
-let tmpNull;
+var tmpNull;
 //じゃあいつ使うの？
 //これなら使えるけど、voidを使おう
 function sayHello2() {
@@ -137,25 +137,25 @@ function sayHello2() {
 /**
  * 関数型を使って特定の関数のみ代入できるようにする
  */
-const anotherAdd = add;
+var anotherAdd = add;
 //アロー関数
-const dobleNumber = num => num * 2;
+var dobleNumber = function (num) { return num * 2; };
 /**
  * callback関数の型
  */
 function doubkeAndhandle(num, cb) {
-    const doubleNum = cb(num * 2);
+    var doubleNum = cb(num * 2);
     console.log(doubleNum);
 }
-doubkeAndhandle(21, doubleNum => {
+doubkeAndhandle(21, function (doubleNum) {
     return doubleNum;
 });
 /**
  * unlnown型
  */
-let unknownInput;
-let anyInput;
-let text;
+var unknownInput;
+var anyInput;
+var text;
 //unknownの場合
 unknownInput = 'aaa';
 unknownInput = 21;
