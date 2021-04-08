@@ -14,6 +14,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+//abstractはインスタンスを生成できない
+//継承のためにのみ使われるクラスです
 var PersonData = /** @class */ (function () {
     function PersonData(name, age) {
         this.name = name;
@@ -42,6 +44,8 @@ var PersonData = /** @class */ (function () {
 //継承
 var Teater = /** @class */ (function (_super) {
     __extends(Teater, _super);
+    //constructorにprivateをつけるとnewできなくなる
+    //シングルトンパターンに使える。インスタンス1回だけ。
     function Teater(name, age, _subject) {
         var _this = _super.call(this, name, age) || this;
         _this._subject = _subject;
@@ -66,10 +70,23 @@ var Teater = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    // greeting(){
+    //     console.log(`hello my name is ${this.name}. Iam ${this.age} years old. I teach ${this.subject}`);
+    // }
+    Teater.getInstance = function () {
+        if (Teater.instance) {
+            return Teater.instance;
+        }
+        else {
+            Teater.instance = new Teater('Jack', 38, 'English');
+            return Teater.instance;
+        }
+    };
     return Teater;
 }(PersonData));
-var teachr = new Teater('Jack', 38, 'English');
-teachr.greeting();
+var teacher = Teater.getInstance();
+var teacher2 = Teater.getInstance();
+console.log(teacher, teacher2); //同じものが出力
 //static呼び出し可能
 // console.log(PersonData.species);
 // console.log(PersonData.isAdult(38));

@@ -63,7 +63,7 @@ class Developer implements Human{
 
 //構造的部分型
 //Humanが型として指定できる。greetingがないのに・・tsではそれがOK
-const user:Human = new Developer('Mary',30,3);
+const user:Human = new Developer(30,3);
 user.greeting; //できる
 
 const tmpDev = {
