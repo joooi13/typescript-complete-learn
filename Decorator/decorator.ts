@@ -18,6 +18,9 @@ function Component(template:string,selector:string){
             mountedElement.innerHTML = template;
             mountedElement.querySelector('h1')!.textContent = instance.name;
         }
+
+        //無名関数を返す
+        return class extends constructor{}
     }
 
 }
@@ -33,8 +36,8 @@ function Component(template:string,selector:string){
 //部分的にデコることができる
 //デコレータはインスタンス生成時ではなく、classの定義時に実行される
 //@Logging
-@Logging('LoggingUser')  //引数をとることもできる  //デコレータは下から上に実行される
-@Component('<h1>{{name}}</h1>','#app')
+@Logging('LoggingUser')  //引数をとることもできる  
+@Component('<h1>{{name}}</h1>','#app')　　　　//デコレータは下から上に実行される
 class User {
     name = 'Quill';
     constructor(){
