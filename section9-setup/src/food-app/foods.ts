@@ -1,3 +1,4 @@
+//import  * as Interfaces  from "./interfaces.js";　　　//全部とることも可
 import { Foosable } from "./interfaces.js";
 import { Food } from "./food.js";
 
