@@ -1,4 +1,4 @@
-import { Food } from "./food.js";
+import { Food } from "./food";
 //一覧だけを持っている
 export class Foods {
     constructor() {

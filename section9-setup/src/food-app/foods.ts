@@ -1,6 +1,6 @@
 //import  * as Interfaces  from "./interfaces.js";　　　//全部とることも可
-import { Foosable } from "./interfaces.js";
-import { Food } from "./food.js";
+import { Foosable } from "./interfaces";
+import { Food } from "./food";
 
 //一覧だけを持っている
 export class Foods implements Foosable{

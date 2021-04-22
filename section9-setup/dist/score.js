@@ -1,4 +1,4 @@
-import { Foods } from "./foods.js";
+import { Foods } from "./foods";
 //スコアの合計
 export class Score {
     constructor() { }
