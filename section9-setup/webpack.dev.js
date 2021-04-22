@@ -4,7 +4,7 @@ const path = require('path');
 //nodejsのexport文
 //webpackコマンドを実行したときによまれる
 module.exports = {
-    mode: 'development',  //デフォルトはproduction
+    mode: 'development',  //デフォルトはproduction.
     //スタート地点
     //entrty: './dist/main.js',
     entry: './src/food-app/main.ts',   //ts-loaderを使う場合こっち
